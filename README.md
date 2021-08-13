@@ -8,7 +8,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Simple tool built to make it easier to viewing SSH auth.logs by pulling only failed password attempts. Tool will display by deafult the top 5 ip addresses, users, and ports used in failed attempts to log into a SSH session. Additionally tool is able to provide a full ip list along with the total number of failed occurences. Appending a cleaning flag will give a clean version of that list only displaying ip addresses. 
+Simple linux tool built to make it easier to viewing SSH auth.logs by pulling only failed password attempts. Tool will display by deafult the top 5 ip addresses, users, and ports used in failed attempts to log into a SSH session. Additionally tool is able to provide a full ip list along with the total number of failed occurences. Appending a cleaning flag will give a clean version of that list only displaying ip addresses. 
 
 
 ### Built With
