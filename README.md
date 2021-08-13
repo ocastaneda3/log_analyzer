@@ -25,7 +25,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ocastaneda3/log_analyser.git
+   git clone https://github.com/ocastaneda3/log_analyzer.git
    ```
 
 <!-- USAGE EXAMPLES -->
@@ -122,12 +122,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/ocastaneda3/multilayer-perceptron.svg?style=for-the-badge
-[contributors-url]: https://github.com/ocastaneda3/multilayer-perceptron/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ocastaneda3/multilayer-perceptron.svg?style=for-the-badge
-[forks-url]: https://github.com/ocastaneda3/multilayer-perceptron/network/members
-[stars-shield]: https://img.shields.io/github/stars/ocastaneda3/multilayer-perceptron.svg?style=for-the-badge
-[stars-url]: https://github.com/ocastaneda3/multilayer-perceptron/stargazers
+[contributors-shield]: https://img.shields.io/github/contributors/ocastaneda3/log_analyzer.svg?style=for-the-badge
+[contributors-url]: https://github.com/ocastaneda3/log_analyzer/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/ocastaneda3/log_analyzer.svg?style=for-the-badge
+[forks-url]: https://github.com/ocastaneda3/log_analyzer/network/members
+[stars-shield]: https://img.shields.io/github/stars/ocastaneda3/log_analyzer.svg?style=for-the-badge
+[stars-url]: https://github.com/ocastaneda3/log_analyzer/stargazers
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/oscar-castaneda93/
 [license-shield]: https://img.shields.io/github/license/ocastaneda3/log_analyzer.svg?style=for-the-badge
