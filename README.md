@@ -31,84 +31,118 @@ To get a local copy up and running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Tool can be run from any location but does require ```sudo``` or root privileges in order to be able to read SSH auth.log(s) that are located under ```/var/log/```. Tool is used as follows:
+   ```sh 
+      $ sudo python3 log_analyzer.py /var/log/auth.log
+   ```
+By default this tool print the top 5 results of occurences in IP Addressses, Users, and Ports used.
 
-#### [-h], [--help]   show this help message and exit 
-  ```sh
-  $ sudo python3 log_analyzer.py --help
-  
-  usage: sudo log_analysis.py [-h] [-n N] [-f] [-c] [-d] filename [filename ...]
+#### Help Screen 
+   ```sh
+   $ sudo python3 log_analyzer.py -h
 
-  optional arguments:
-    -h, --help   show this help message and exit
-    -n N         print top N
-    -f, --full   print full ip list w/ number of occurences
-    -c, --clean  to be used with [-f] to print clean list
-    -d, --debug  enable debugging
+   usage: sudo log_analysis.py [-h] [-n N] [-f] [-c] [-d] filename [filename ...]
 
-  required arguments:
-    filename     input file name
-  ```
-####  [-n] N         print top N
-  ```sh
-  $ sudo python3 log_analyzer.py -n 3 /var/log/auth.log
-  
-  ------------------------------------------------------------
-   << Top # 3 IP Addresses >>
-  ------------------------------------------------------------
+   Simple tool to pull Failed Password attempts from SSH AUTH Logs
+
+   positional arguments:
+     filename     input file name
+
+   optional arguments:
+     -h, --help   show this help message and exit
+     -n N         print top N
+     -f, --full   print full ip list w/ number of occurences
+     -c, --clean  print clean list and to be used with [-f] to
+     -d, --debug  enable debugging
+
+   ```
+
+#### Running
+
+##### - Print Top N Results ```[-n N]```
+   ```sh
+   $ sudo python3 log_analyzer.py -n 5 /var/log/auth.log
+
+   ------------------------------------------------------------
+   << Top # 5 IP Addresses >>
+   ------------------------------------------------------------
    1)             49.88.112.116:      899
    2)              218.92.0.205:      816
    3)           221.181.185.135:      615
-  ------------------------------------------------------------
-  ------------------------------------------------------------
-   << Top # 3 Users >>
-  ------------------------------------------------------------
+   4)            222.186.42.213:      585
+   5)              87.241.1.186:      526
+   ------------------------------------------------------------
+   ------------------------------------------------------------
+   << Top # 5 Users >>
+   ------------------------------------------------------------
    1)                      root:    29659
    2)                   invalid:     7546
    3)                    backup:       15
-  ------------------------------------------------------------
-  ------------------------------------------------------------
-   << Top # 3 Ports >>
-  ------------------------------------------------------------
+   4)                       www:       11
+   5)                      sshd:        8
+   ------------------------------------------------------------
+   ------------------------------------------------------------
+   << Top # 5 Ports >>
+   ------------------------------------------------------------
    1)                      1024:       67
    2)                     18048:       50
    3)                      1089:       39
-  ------------------------------------------------------------
-  ```
-#### [-f], [--full]   print full ip list w/ number of occurences
-  ```sh
-  $ sudo python3 log_analyzer.py --full /var/log/auth.log
-  
-  49.88.112.116        899
-  218.92.0.205         816
-  221.181.185.135      615
-  222.186.42.213       585
-  87.241.1.186         526
-  221.181.185.153      467
-  221.181.185.198      403
-  221.181.185.159      388
-  . 
-  . .
-  . . .
-  ```
+   4)                      1090:       39
+   5)                      1091:       37
+   ------------------------------------------------------------
+   ```
+   
+##### - Print Full List ```[-f], [--full]```
+   ```sh
+   $ sudo python3 log_analyzer.py --full /var/log/auth.log
+
+   49.88.112.116        899
+   218.92.0.205         816
+   221.181.185.135      615
+   222.186.42.213       585
+
+   . . .
+
+   42.192.134.176         1
+   106.12.182.249         1
+   220.117.154.138        1
+   119.136.154.50         1
+   ```
  
-#### [-c], [--clean]  to be used with [-f] to print clean list
-  ```sh
-  $ sudo python3 log_analyzer.py --full --clean /var/log/auth.log
+##### - Print Full Clean List ```[-c], [--clean]```
+   ```sh
+   $ sudo python3 log_analyzer.py --full --clean /var/log/auth.log
+
+   49.88.112.116
+   218.92.0.205
+   221.181.185.135
+   222.186.42.213
+
+   . . . 
+
+   42.192.134.176
+   106.12.182.249
+   220.117.154.138
+   119.136.154.50
+   ```
   
-  49.88.112.116
-  218.92.0.205
-  221.181.185.135
-  222.186.42.213
-  87.241.1.186
-  221.181.185.153
-  221.181.185.198
-  221.181.185.159
-  . 
-  . .
-  . . .
-  ```
-  
+  ##### - Print W/ Debug ```[-d], [--debug]```
+   ```sh
+   $ sudo python3 log_analyzer.py --full --clean /var/log/auth.log
+
+   date/timestamp: Aug  1 00:00:15, user: root, ip: 218.92.0.205, port 27348
+   date/timestamp: Aug  1 00:00:23, user: root, ip: 218.92.0.205, port 27348
+   date/timestamp: Aug  1 00:00:38, user: invalid, ip: 118.195.132.206, port 57754
+   date/timestamp: Aug  1 00:00:43, user: invalid, ip: 59.63.230.46, port 57910
+
+   . . .
+
+   date/timestamp: Aug  5 18:42:00, user: invalid, ip: 45.55.193.62, port 37152
+   date/timestamp: Aug  5 18:42:21, user: root, ip: 220.88.1.208, port 41622
+   date/timestamp: Aug  5 18:42:29, user: invalid, ip: 27.221.18.26, port 50646
+
+   ```
+   
 <!-- LICENSE -->
 ## License
 
