@@ -115,10 +115,10 @@ class log_stats():
 # ------------------------
 if __name__ == '__main__':
     # Setup command line argument parsing.
-    parser = argparse.ArgumentParser(description='Simple tool to pull Failed Password attempts from SSH AUTH Logs')
+    parser = argparse.ArgumentParser(prog = 'sudo log_analysis.py', description='Simple tool to pull Failed Password attempts from SSH AUTH Logs')
 
     parser.add_argument('filename', nargs='+', help='input file name')
-    parser.add_argument('-n', metavar='N', default=5, help='print top N')
+    parser.add_argument('-n', metavar='N', default=5, type=int, help='print top N')
     parser.add_argument('-f','--full',  action='store_true', help='print full ip list w/ number of occurences')
     parser.add_argument('-c','--clean', action='store_true', help='print clean list and to be used with [-f] to')
     parser.add_argument('-d','--debug', action='store_true', help='enable debugging')
