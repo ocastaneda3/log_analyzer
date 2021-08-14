@@ -8,7 +8,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Simple linux tool built to make it easier to viewing SSH auth.logs by pulling only failed password attempts. Tool will display by deafult the top 5 ip addresses, users, and ports used in failed attempts to log into a SSH session. Additionally tool is able to provide a full ip list along with the total number of failed occurences. Appending a cleaning flag will give a clean version of that list only displaying ip addresses. 
+Simple linux tool built to make it easier to viewing SSH ```auth.log(s)``` by pulling only failed password attempts. Tool will display by deafult the top 5 ip addresses, users, and ports used in failed attempts to log into a SSH session. Additionally tool is able to provide a full ip list along with the total number of failed occurences. Appending a cleaning flag will give a clean version of that list only displaying ip addresses. 
 
 
 ### Built With
@@ -35,7 +35,7 @@ Tool can be run from any location but does require ```sudo``` or root privileges
    ```sh 
       $ sudo python3 log_analyzer.py /var/log/auth.log
    ```
-By default this tool print the top 5 results of occurences in IP Addressses, Users, and Ports used.
+By default this tool print the top 5 results of occurences in ip addresses, users, and ports used in failed attempts to login.
 
 #### Help Screen 
    ```sh
